@@ -38,7 +38,7 @@ const AboutPage = ({ isLoading, data }) => {
         </div>
       </div>
     </div>
-  );
+  ); 
 };
 
 export default AboutPage;

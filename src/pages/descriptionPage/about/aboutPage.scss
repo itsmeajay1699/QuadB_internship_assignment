@@ -29,26 +29,30 @@
 .detail-banner-items {
   z-index: 1;
   display: flex;
-  align-items: center;
+  padding: 20px;
   flex-direction: column;
   width: 100%;
   gap: 20px;
   @include md {
     padding: 50px;
     flex-direction: row;
-    align-items: start;
+    align-items: center;
   }
   .movie-img-container {
     position: relative;
-    width: 25%;
+    width: 100%;
     min-width: 300px;
     z-index: 1;
     float: left;
-    height: 60%;
+    height: 25rem;
     margin-right: 20px;
+    @include md {
+      width: 25%;
+      height: 100%;
+    }
     img {
       width: 100%;
-      height: 100%;
+      object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     }
@@ -71,7 +75,7 @@
   }
   .movie-detail-container {
     color: #fff;
-    width: 20rem;
+    width: 100%;
     padding: 20px;
     z-index: 1;
     @include md {
