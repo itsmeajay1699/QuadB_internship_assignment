@@ -151,3 +151,18 @@ p {
   color: var(--clr-black);
   border-color: var(--clr-white);
 }
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  opacity: 0.8;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}

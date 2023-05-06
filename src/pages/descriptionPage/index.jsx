@@ -22,19 +22,15 @@ const DescriptionPage = () => {
         <Toaster />
         <AboutPage isLoading={isLoading} data={data} />
         <div className="booking-btn">
-          {show == false ? (
-            <button onClick={() => setShow(!show)} className="btn-primary">
-              Book Now
-            </button>
-          ) : (
-            <button onClick={() => setShow(!show)} className="btn-primary">
-              Cancel Booking
-            </button>
-          )}
+          <button onClick={() => setShow(!show)} className="btn-primary">
+            Book Now
+          </button>
         </div>
-        <ContentWrapper>
-          {show && <MovieBookingForm data={data} />}
-        </ContentWrapper>
+        {show && (
+          <div className="fixed">
+            <MovieBookingForm data={data} showForm={show} setShow={setShow} />
+          </div>
+        )}
       </Layout>
     </>
   );

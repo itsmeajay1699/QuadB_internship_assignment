@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./movieForm.css";
+import { FaTimes } from "react-icons/fa";
 import toast from "react-hot-toast";
-function MovieBookingForm({ data }) {
+function MovieBookingForm({ data, showForm, setShow }) {
   const [show] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -97,6 +98,16 @@ function MovieBookingForm({ data }) {
           <button type="submit" className="submit">
             Book Ticket
           </button>
+
+          <FaTimes
+            className="close-btn"
+            onClick={() =>
+              setShow((prevShow) => {
+                console.log(prevShow);
+                return !prevShow;
+              })
+            }
+          />
         </form>
       </div>
     </div>
