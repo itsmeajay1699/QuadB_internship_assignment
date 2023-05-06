@@ -14,7 +14,6 @@ const MovieCard = ({ movieData }) => {
       {movieData?.show?.rating?.average && (
         <CircleProgressBar rating={movieData?.show?.rating?.average} />
       )}
-
       <div className="image-with-hover-overlay">
         <div className="image-with-hover-name">
           {movieData?.show?.name || "No Name"}

@@ -2,11 +2,18 @@
   position: relative;
   display: inline-block;
 }
-
+.image-with-hover-container:hover .image-with-hover-img {
+  transform: scale(1.1);
+}
 .image-with-hover-img {
   display: block;
   width: 100%;
   border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-with-hover-img:hover {
+  transform: scale(1.1);
 }
 
 .image-with-hover-overlay {
@@ -22,11 +29,13 @@
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .image-with-hover-overlay:hover {
   opacity: 1;
+  transform: scale(1.1);
+  border-radius: 12px;
 }
 
 .image-with-hover-name {
