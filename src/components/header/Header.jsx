@@ -14,11 +14,8 @@ const Header = () => {
   const [query, setQuery] = useState("");
   const [showSearch, setShowSearch] = useState("");
   const searchHandle = (e) => {
+    console.log(query);
     if (e.key === "Enter" && query.length > 0) {
-      navigate(`/search/${query}`);
-      setTimeout(() => {
-        setShowSearch(false);
-      }, 1000);
     }
   };
   const openSearch = () => {
@@ -29,22 +26,6 @@ const Header = () => {
     setMobileMenu(true);
     setShowSearch(false);
   };
-
-  useEffect(() => {
-    let lastScroll = 0;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScroll) {
-        setShow("bottom");
-      } else {
-        setShow("top");
-      }
-      lastScroll = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <header
@@ -78,6 +59,7 @@ const Header = () => {
             <div className="searchInput">
               <input
                 type="text"
+                value={query}
                 placeholder="Search for a movie, tv show, person..."
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyUp={searchHandle}
