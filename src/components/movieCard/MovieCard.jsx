@@ -3,6 +3,7 @@ import Img from "../lazyLoadImage/img";
 import { NavLink } from "react-router-dom";
 import "./movieCard.css";
 import PosterImg from "../../assets/no-poster.png";
+import CircleProgressBar from "../circleProgressBar/CircleProgressbar";
 const MovieCard = ({ movieData }) => {
   return (
     <div className="movie-card">
@@ -11,6 +12,9 @@ const MovieCard = ({ movieData }) => {
           className="movie-img"
           src={movieData?.show?.image?.medium || PosterImg}
         />
+        {movieData?.show?.rating?.average && (
+          <CircleProgressBar rating={movieData?.show?.rating?.average} />
+        )}
       </div>
       <div className="movie-info">
         <div className="movie-name">{movieData?.show?.name}</div>
